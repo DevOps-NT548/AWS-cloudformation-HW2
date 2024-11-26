@@ -55,11 +55,18 @@ aws_secret_access_key=<your-key>
 #### 2. Chạy scripts:
 
 - Ta cd vào thư mục ./scripts.
-- Ta chạy những dòng lệnh sau để cho phép thực thi 2 scripts deploy.sh và destroy.sh:
+- Ta chạy những dòng lệnh sau để cho phép thực thi các scripts: 
 
-```
+```bash
 chmod +x deploy.sh
 chmod +x destroy.sh
+chmod +x upload_templates_to_s3.sh
+```
+
+- Upload các file templates lên S3:
+
+```
+./upload_templates_to_s3.sh
 ```
 
 - Chạy scripts:
@@ -72,4 +79,9 @@ chmod +x destroy.sh
 
 ```
 ./destroy.sh
+```
+
+#### 3. Dùng taskcat để test templates:
+```bash
+taskcat test run
 ```
